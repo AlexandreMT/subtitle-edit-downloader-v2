@@ -1,0 +1,22 @@
+{
+  "name": "node-ts-boilerplate",
+  "version": "1.0.0",
+  "main": "src/Index.ts",
+  "author": "Alexandre Matos <alexandremt03@gmail.com>",
+  "license": "MIT",
+  "private": false,
+  "devDependencies": {
+    "@types/axios": "^0.14.0",
+    "@types/inquirer": "^6.5.0",
+    "@types/node": "^13.7.7",
+    "@types/ora": "^3.2.0",
+    "eslint": "^6.8.0",
+    "ts-node": "^8.6.2",
+    "typescript": "^3.8.3"
+  },
+  "dependencies": {
+    "axios": "^0.19.2",
+    "inquirer": "^7.0.6",
+    "ora": "^4.0.3"
+  }
+}

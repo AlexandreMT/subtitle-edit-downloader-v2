@@ -1,0 +1,19 @@
+{
+	"compilerOptions": {
+		"target": "es2020",
+		"module": "commonjs",
+    "noImplicitAny": true,
+    "noImplicitReturns": false,
+		"removeComments": true,
+		"esModuleInterop": true,
+    "forceConsistentCasingInFileNames": true,
+    "allowSyntheticDefaultImports": true,
+    "strict": true,
+    "strictFunctionTypes": true,
+		"noUnusedLocals": true,
+		"resolveJsonModule": true,
+		"baseUrl": "./src"
+	},
+	"include": ["./src/**/*"],
+	"exclude": ["node_modules"]
+}
