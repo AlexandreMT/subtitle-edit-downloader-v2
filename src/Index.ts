@@ -1,4 +1,7 @@
-import { fetchLatestRelease, showLatestReleaseAndSelectAsset } from './modules/Releases'
+import {
+  fetchLatestRelease,
+  showLatestReleaseAndSelectAsset
+} from './modules/Releases'
 
 (async function start() {
   const latestRelease = await fetchLatestRelease()

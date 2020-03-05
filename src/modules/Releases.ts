@@ -1,7 +1,7 @@
-import inquirer from 'inquirer';
+import inquirer from 'inquirer'
 import GitHubLib from '../lib/GitHub.lib'
 import ora from 'ora'
-import { mLatestRelease } from '../config/Consts';
+import { mLatestRelease } from '../config/Consts'
 
 export const fetchLatestRelease = async (): Promise<any> => {
   const { fetchLatestRelease } = await inquirer.prompt({
@@ -27,8 +27,8 @@ export const showLatestReleaseAndSelectAsset = async (latestRelease: any): Promi
   if (!listAssets) process.exit()
 
   const assets = latestRelease.assets.map((asset: any) => {
-    return `${asset.name} - Updated at: ${asset.updated_at}`;
-  });
+    return `${asset.name} - Updated at: ${asset.updated_at}`
+  })
 
   assets.push('Exit')
 
@@ -41,5 +41,5 @@ export const showLatestReleaseAndSelectAsset = async (latestRelease: any): Promi
 
   if (selectedAsset === 'Exit') process.exit()
 
-  return selectedAsset.split(' - ')[0].trim();
+  return selectedAsset.split(' - ')[0].trim()
 }
