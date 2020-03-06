@@ -2,6 +2,10 @@ import inquirer from 'inquirer'
 import GitHubLib from '../lib/GitHub.lib'
 import ora from 'ora'
 import { mLatestRelease } from '../config/Consts'
+import fs from 'fs'
+import path from 'path'
+
+let releaseTag: string
 
 export const fetchLatestRelease = async (): Promise<any> => {
   const { fetchLatestRelease } = await inquirer.prompt({
@@ -12,6 +16,7 @@ export const fetchLatestRelease = async (): Promise<any> => {
 
   const spinner = ora('Fetching latest release...').start()
   const latestRelease = await GitHubLib.fetchLatestRelease()
+  releaseTag = latestRelease.tag_name
   spinner.succeed().stop()
 
   return latestRelease
@@ -42,4 +47,11 @@ export const showLatestReleaseAndSelectAsset = async (latestRelease: any): Promi
   if (selectedAsset === 'Exit') process.exit()
 
   return selectedAsset.split(' - ')[0].trim()
+}
+
+export const downloadAsset = async (selectedAsset: any): Promise<any> => {
+  const spinner = ora('Downloading asset...').start()
+  const download = await GitHubLib.downloadSelectedAsset(releaseTag, selectedAsset)
+  await download.pipe(fs.createWriteStream(path.resolve(__dirname, '..', '..')))
+  spinner.succeed().stop()
 }
