@@ -12,7 +12,8 @@
     "strictFunctionTypes": true,
 		"noUnusedLocals": true,
 		"resolveJsonModule": true,
-		"baseUrl": "./src"
+		"baseUrl": "./src",
+		"outDir": "./build"
 	},
 	"include": ["./src/**/*"],
 	"exclude": ["node_modules"]

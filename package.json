@@ -5,6 +5,9 @@
   "author": "Alexandre Matos <alexandremt03@gmail.com>",
   "license": "MIT",
   "private": false,
+  "scripts": {
+    "build": "tsc"
+  },
   "devDependencies": {
     "@types/axios": "^0.14.0",
     "@types/inquirer": "^6.5.0",
