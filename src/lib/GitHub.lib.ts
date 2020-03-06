@@ -17,13 +17,13 @@ class GitHubLib {
       return await this.api.get(`${path}?${query}`)
     } catch (error) {
       console.log('Error on fetch latest release. Closing in 10 seconds.')
-      await sleep(10)
+      await sleep(10000)
       process.exit(1)
     }
   }
 
   public async fetchLatestRelease(): Promise<any> {
-    return (await this.get(`/repos/SubtitleEdit/subtitleedit/releases/latest`)).data
+    return (await this.get('/repos/SubtitleEdit/subtitleedit/releases/latest')).data
   }
 }
 

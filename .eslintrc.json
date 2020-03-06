@@ -42,7 +42,7 @@
 		"eqeqeq": "error",
 		"no-empty-function": "error",
 		"require-await": "error",
-		"no-unused-vars": "error",
+		"no-unused-vars": "off",
 		"eol-last": [
 			"error",
 			"always"
