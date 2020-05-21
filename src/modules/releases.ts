@@ -55,8 +55,7 @@ export const downloadAsset = async (selectedAsset: any): Promise<void> => {
   spinner.succeed().stop()
   spinner = ora('Saving file...').start()
   await new Promise((resolve) => {
-    download.pipe(
-      fs.createWriteStream(path.resolve(__dirname, '..', '..', selectedAsset))
-    ).on('close', () => resolve(spinner.succeed().stop()))
+    download.pipe(fs.createWriteStream(path.resolve(__dirname, '..', '..', selectedAsset)))
+      .on('close', () => resolve(spinner.succeed().stop()))
   })
 }
