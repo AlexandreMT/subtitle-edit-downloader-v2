@@ -1,7 +1,7 @@
 import inquirer from 'inquirer'
-import GitHubLib from '../lib/GitHub.lib'
+import GitHubLib from '../services/github.service'
 import ora from 'ora'
-import { mLatestRelease } from '../config/Consts'
+import { mLatestRelease } from '../config/consts'
 import fs from 'fs'
 import path from 'path'
 
@@ -31,9 +31,9 @@ export const showLatestReleaseAndSelectAsset = async (latestRelease: any): Promi
 
   if (!listAssets) process.exit()
 
-  const assets = latestRelease.assets.map((asset: any) => {
-    return `${asset.name} - Updated at: ${asset.updated_at}`
-  })
+  const assets = latestRelease.assets.map((asset: any) => (
+    `${asset.name} - Updated at: ${asset.updated_at}`
+  ))
 
   assets.push('Exit')
 

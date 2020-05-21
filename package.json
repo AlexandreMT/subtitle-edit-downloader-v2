@@ -1,7 +1,7 @@
 {
   "name": "node-ts-boilerplate",
   "version": "1.0.0",
-  "main": "src/Index.ts",
+  "main": "src/index.ts",
   "author": "Alexandre Matos <alexandremt03@gmail.com>",
   "license": "MIT",
   "private": false,

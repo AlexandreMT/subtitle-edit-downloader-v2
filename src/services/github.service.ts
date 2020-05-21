@@ -1,6 +1,5 @@
 import axios, { AxiosInstance, AxiosResponse } from 'axios'
-import { GITHUB_API_BASE_URL, SE_GITHUB_RELEASE_DOWNLOAD } from '../config/environment/Env'
-import { sleep } from '../config/Consts'
+import { GITHUB_API_BASE_URL, SE_GITHUB_RELEASE_DOWNLOAD } from '../config/environment/environment'
 
 class GitHubLib {
   private api: AxiosInstance
@@ -21,8 +20,8 @@ class GitHubLib {
       return await this.api.get(`${path}?${query}`)
     } catch (error) {
       console.log('Something went bad. Closing in 10 seconds.')
-      await sleep(10000)
-      process.exit(1)
+      throw new Error(error)
+      
     }
   }
 
@@ -33,8 +32,8 @@ class GitHubLib {
       })
     } catch (error) {
       console.log('Something went bad. Closing in 10 seconds.')
-      await sleep(10000)
-      process.exit(1)
+      throw new Error(error)
+      
     }
   }
 

@@ -2,7 +2,7 @@ import {
   fetchLatestRelease,
   showLatestReleaseAndSelectAsset,
   downloadAsset
-} from './modules/Releases'
+} from './modules/releases'
 
 (async function start() {
   const latestRelease = await fetchLatestRelease()
