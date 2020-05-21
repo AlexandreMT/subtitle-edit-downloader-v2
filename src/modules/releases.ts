@@ -3,8 +3,8 @@ import GitHubLib from '../services/github.service'
 import ora from 'ora'
 import { mLatestRelease } from '../config/consts'
 import fs from 'fs'
-import path from 'path'
 
+const currentPath = process.cwd()
 let releaseTag: string
 
 export const fetchLatestRelease = async (): Promise<any> => {
@@ -55,7 +55,7 @@ export const downloadAsset = async (selectedAsset: any): Promise<void> => {
   spinner.succeed().stop()
   spinner = ora('Saving file...').start()
   await new Promise((resolve) => {
-    download.pipe(fs.createWriteStream(path.resolve(__dirname, selectedAsset)))
+    download.pipe(fs.createWriteStream(`${currentPath}/${selectedAsset}`))
       .on('close', () => resolve(spinner.succeed().stop()))
   })
 }
