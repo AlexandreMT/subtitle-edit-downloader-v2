@@ -1,10 +1,9 @@
 import inquirer from 'inquirer'
 import GitHubLib from '../services/github.service'
 import ora from 'ora'
-import { mLatestRelease } from '../config/consts'
+import { mLatestRelease, currentPath } from '../config/consts'
 import fs from 'fs'
 
-const currentPath = process.cwd()
 let releaseTag: string
 
 export const fetchLatestRelease = async (): Promise<any> => {

@@ -2,8 +2,7 @@ import unzipper from 'unzipper'
 import inquirer from 'inquirer'
 import ora from 'ora'
 import fs from 'fs'
-
-const currentPath = process.cwd()
+import { currentPath } from '../config/consts'
 
 export const unzipDownloadedAsset = async (selectedAsset: string): Promise<void> => {
   const { unzipAsset } = await inquirer.prompt({
