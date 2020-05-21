@@ -52,6 +52,6 @@ export const showLatestReleaseAndSelectAsset = async (latestRelease: any): Promi
 export const downloadAsset = async (selectedAsset: any): Promise<any> => {
   const spinner = ora('Downloading asset...').start()
   const download = await GitHubLib.downloadSelectedAsset(releaseTag, selectedAsset)
-  await download.pipe(fs.createWriteStream(path.resolve(__dirname, '..', '..', 'subtitle_edit.zip')))
+  await download.pipe(fs.createWriteStream(path.resolve(__dirname, '..', '..', selectedAsset)))
   spinner.succeed().stop()
 }
