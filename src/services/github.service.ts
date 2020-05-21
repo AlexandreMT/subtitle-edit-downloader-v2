@@ -21,9 +21,7 @@ class GitHubLib {
     try {
       return await this.api.get(`${path}?${query}`)
     } catch (error) {
-      console.log('Something went bad. Closing in 10 seconds.')
       throw new Error(error)
-      
     }
   }
 
@@ -33,9 +31,7 @@ class GitHubLib {
         responseType: 'stream'
       })
     } catch (error) {
-      console.log('Something went bad. Closing in 10 seconds.')
       throw new Error(error)
-      
     }
   }
 
