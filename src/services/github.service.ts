@@ -11,7 +11,8 @@ class GitHubLib {
     })
 
     this.downloadUrl = axios.create({
-      baseURL: SE_GITHUB_RELEASE_DOWNLOAD
+      baseURL: SE_GITHUB_RELEASE_DOWNLOAD,
+      responseType: 'stream'
     })
   }
 
