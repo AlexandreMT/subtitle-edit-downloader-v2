@@ -1,5 +1,6 @@
 import axios, { AxiosInstance, AxiosResponse } from 'axios'
 import { GITHUB_API_BASE_URL, SE_GITHUB_RELEASE_DOWNLOAD } from '../config/environment/environment'
+import { Stream } from 'stream'
 
 class GitHubLib {
   private api: AxiosInstance
@@ -42,7 +43,7 @@ class GitHubLib {
     return (await this.get('/repos/SubtitleEdit/subtitleedit/releases/latest')).data
   }
 
-  public async downloadSelectedAsset(releaseTag: string, selectedAsset: string): Promise<any> {
+  public async downloadSelectedAsset(releaseTag: string, selectedAsset: string): Promise<Stream> {
     return (await this.download(`/${releaseTag}/${selectedAsset}`)).data
   }
 }
